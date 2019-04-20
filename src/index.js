@@ -1,5 +1,5 @@
+require("dotenv").config({ path: "/usr/src/app/.env" });
 const express = require("express");
-require("dotenv").config();
 const XeroClient = require("xero-node").AccountingAPIClient;
 
 const Helpers = require("./helpers");
@@ -13,9 +13,9 @@ let accessToken = null;
 
 let client = new XeroClient({
   appType: "public",
-  consumerKey: "YHOILDNK9WVZ2ITYALHNVOQKKPGYW1",
-  consumerSecret: "EZBOOGGV6Z7TJLMPXHQFHZC3FYVR8I",
-  callbackUrl: "http://localhost:3000/oauth",
+  consumerKey: process.env.XERO_CONSUMER_KEY,
+  consumerSecret: process.env.XERO_SECRET_KEY,
+  callbackUrl: process.env.XERO_CALLBACK_URL || "http://localhost:3000/oauth",
 });
 
 //Routes
