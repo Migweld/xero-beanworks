@@ -13,6 +13,10 @@ services:
       - db
     depends_on:
       - db
+    environment:
+      - XERO_CALLBACK_URL=${XERO_CALLBACK_URL}
+      - XERO_CONSUMER_KEY=${XERO_CONSUMER_KEY}
+      - XERO_SECRET_KEY=${XERO_SECRET_KEY}
 
   db:
     image: mongo
