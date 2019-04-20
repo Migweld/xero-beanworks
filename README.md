@@ -8,6 +8,7 @@ A NodeJS (Express) & MongoDB based implementation of an API to connect to the Xe
 - No sample data is provided for `ContactGroups` or `AccountGroups`, these have been omitted
 - The Xero app is public, as opposed to private, meaning a consumer key/secret key oAuth1 config has been used
 - Duplicates are not to be stored
+- Data is returned as an object once stored
 
 ### Testing
 
