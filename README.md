@@ -5,8 +5,8 @@ A NodeJS (Express) & MongoDB based implementation of an API to connect to the Xe
 ### Assumptions
 
 - Vendors are those contacts in Xero with the `IsSupplier` flag set to `true`
-- No sample data is provided for `ContactGroups` or `AccountGroups`, as such these have been omitted
-- The Xero app is public, as opposed to private, as such a consumer key/secret key oAuth1 config has been used
+- No sample data is provided for `ContactGroups` or `AccountGroups`, these have been omitted
+- The Xero app is public, as opposed to private, meaning a consumer key/secret key oAuth1 config has been used
 - Duplicates are not to be stored
 
 ### Testing
