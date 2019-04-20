@@ -1,0 +1,29 @@
+version: "3.5"
+services:
+  web:
+    build: ./
+    restart: always
+    command: node index.js
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app
+      - /usr/src/app/node_modules
+    links:
+      - db
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    restart: always
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongo db:27017/xero-beanworks --quiet 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 40s
+    env_file:
+      - .env
+    ports:
+      - "27017:27017"
